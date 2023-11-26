@@ -6,6 +6,7 @@
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
+                margin-bottom: 32px;
             }
             .btn {
                 height: 60px;
@@ -20,9 +21,8 @@
                 background-color: green;
             }
             .reset {
-                margin: 16px 0 32px;
-                height: 40px;
-                width: 80px;
+                height: 50px;
+                width: 100px;
             }
         </style>
     </head>
@@ -33,7 +33,6 @@
             <div id="chn1" class="btn one" onclick="use(this.id)">Chn</div>
             <div id="art1" class="btn one" onclick="use(this.id)">Art</div>
         </div>
-        <button class="reset" onclick="reset('one')">Reset</button>
 
         <div class="area">
             <div id="mov2" class="btn two" onclick="use(this.id)">Mov</div>
@@ -41,7 +40,7 @@
             <div id="chn2" class="btn two" onclick="use(this.id)">Chn</div>
             <div id="art2" class="btn two" onclick="use(this.id)">Art</div>
         </div>
-        <button class="reset" onclick="reset('two')">Reset</button>
+        <button class="reset" onclick="reset()">Reset</button>
         <script>
             function use(id) {
                 const element = document.getElementById(id)
@@ -51,8 +50,8 @@
                     element.classList.add('used')
                 }
             }
-            function reset(btnClass) {
-                document.querySelectorAll(`.${btnClass}.used`).forEach((a) => {
+            function reset() {
+                document.querySelectorAll(`.used`).forEach((a) => {
                     a.classList.remove('used')
                 })
             }
