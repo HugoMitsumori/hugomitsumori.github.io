@@ -23,27 +23,38 @@
             .reset {
                 height: 50px;
                 width: 100px;
+                margin-bottom: 32px;
             }
         </style>
     </head>
     <body>
-        <div class="area">
-            <div id="mov1" class="btn one" onclick="use(this.id)">Mov</div>
-            <div id="att1" class="btn one" onclick="use(this.id)">Att</div>
-            <div id="chn1" class="btn one" onclick="use(this.id)">Chn</div>
-            <div id="art1" class="btn one" onclick="use(this.id)">Art</div>
-        </div>
-
-        <div class="area">
-            <div id="mov2" class="btn two" onclick="use(this.id)">Mov</div>
-            <div id="att2" class="btn two" onclick="use(this.id)">Att</div>
-            <div id="chn2" class="btn two" onclick="use(this.id)">Chn</div>
-            <div id="art2" class="btn two" onclick="use(this.id)">Art</div>
-        </div>
         <button class="reset" onclick="reset()">Reset</button>
+        <div class="area">
+            <div class="btn" onclick="use(this)">Mov</div>
+            <div class="btn" onclick="use(this)">Att</div>
+            <div class="btn" onclick="use(this)">Chn</div>
+            <div class="btn" onclick="use(this)">Art</div>
+        </div>
+        <div class="area">
+            <div class="btn" onclick="use(this)">Mov</div>
+            <div class="btn" onclick="use(this)">Att</div>
+            <div class="btn" onclick="use(this)">Chn</div>
+            <div class="btn" onclick="use(this)">Art</div>
+        </div>
+        <div class="area">
+            <div class="btn" onclick="use(this)">Mov</div>
+            <div class="btn" onclick="use(this)">Att</div>
+            <div class="btn" onclick="use(this)">Chn</div>
+            <div class="btn" onclick="use(this)">Art</div>
+        </div>
+        <div class="area">
+            <div class="btn" onclick="use(this)">Mov</div>
+            <div class="btn" onclick="use(this)">Att</div>
+            <div class="btn" onclick="use(this)">Chn</div>
+            <div class="btn" onclick="use(this)">Art</div>
+        </div>
         <script>
-            function use(id) {
-                const element = document.getElementById(id)
+            function use(element) {
                 if (element.classList.contains('used')) {
                     element.classList.remove('used')
                 } else {
