@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            .area {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .btn {
+                height: 60px;
+                width: 60px;
+                border: 2px solid black;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .used {
+                background-color: green;
+            }
+            .reset {
+                margin: 16px 0 32px;
+                height: 40px;
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="area">
+            <div id="mov1" class="btn one" onclick="use(this.id)">Mov</div>
+            <div id="att1" class="btn one" onclick="use(this.id)">Att</div>
+            <div id="chn1" class="btn one" onclick="use(this.id)">Chn</div>
+            <div id="art1" class="btn one" onclick="use(this.id)">Art</div>
+        </div>
+        <button class="reset" onclick="reset('one')">Reset</button>
+
+        <div class="area">
+            <div id="mov2" class="btn two" onclick="use(this.id)">Mov</div>
+            <div id="att2" class="btn two" onclick="use(this.id)">Att</div>
+            <div id="chn2" class="btn two" onclick="use(this.id)">Chn</div>
+            <div id="art2" class="btn two" onclick="use(this.id)">Art</div>
+        </div>
+        <button class="reset" onclick="reset('two')">Reset</button>
+        <script>
+            function use(id) {
+                const element = document.getElementById(id)
+                if (element.classList.contains('used')) {
+                    element.classList.remove('used')
+                } else {
+                    element.classList.add('used')
+                }
+            }
+            function reset(btnClass) {
+                document.querySelectorAll(`.${btnClass}.used`).forEach((a) => {
+                    a.classList.remove('used')
+                })
+            }
+        </script>
+    </body>
+</html>
